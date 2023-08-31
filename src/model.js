@@ -96,4 +96,3 @@ User.hasMany(Rating, { foreignKey: "userId" });
 Rating.belongsTo(User, { foreignKey: "userId" });
 
 Movie.hasMany(Rating, { foreignKey: "userId" });
-Rating.belongsTo(User, { foreignKey: "userId" });
