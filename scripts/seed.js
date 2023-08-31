@@ -40,11 +40,14 @@ const ratingsInDB = await Promise.all(
 
     // Create a rating for each movie
     const movieRatings = randomMovies.map((movie) => {
-      return Rating.create({
-        score: lodash.random(1, 5),
-        userId: user.userId,
-        movieId: movie.movieId,
-      });
+      return Rating.create(
+        {
+          score: lodash.random(1, 5),
+          userId: user.userId,
+          movieId: movie.movieId,
+        },
+        { underscored: true }
+      );
     });
 
     return movieRatings;
